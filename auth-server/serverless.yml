@@ -1,6 +1,6 @@
 service: auth-server
 
-provider:
+provider: 
   name: aws
   runtime: nodejs12.x
   region: eu-central-1
@@ -12,3 +12,12 @@ functions:
       - http: 
           path: api/token/{code}
           method: get
+
+    refreshAccessToken:
+      handler: handler.refreshAccessToken
+      events:
+        - http:
+            path: api/refresh/{code}
+            method: get
+
+  
