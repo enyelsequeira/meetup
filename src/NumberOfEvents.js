@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 class NumberOfEvents extends Component {
 
     state={
-        numberOfEvents: 10
+        numberOfEvents: this.props.numberOfEvents
     }
 
     handleInputChanged =(event) =>{
         const value= event.target.value;
         this.setState({numberOfEvents: value});
+        this.props.updateNumberOfEvents(this.props.lat, this.props.lon, value);
     }
 
     render(){
