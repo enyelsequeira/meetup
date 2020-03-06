@@ -24,13 +24,10 @@ class App extends Component{
 
 
   updateEvents = (lat, lon) => {
-    getEvents(lat, lon).then(response => this.setState({ events: response.events, numberOfEvents: response.events.length, lat: response.city.lat, lon: response.city.lon }));
+    getEvents(lat, lon).then(events => this.setState({ events }));
   }
 
 updateNumberOfEvents = (lat, lon, page) => {
-  console.log('lat: ' + lat);
-  console.log('lon: ' + lon);
-  console.log('page: ' + page);
   getNewListOfEvents(lat, lon, page).then(response => this.setState({ events: response.events }));
 }
 

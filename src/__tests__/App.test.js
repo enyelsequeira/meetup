@@ -22,6 +22,7 @@ describe('<App /> component', () => {
     expect(AppWrapper.find(NumberOfEvents)).toHaveLength(1);
   });
 });
+
 describe('<App /> integration', () => {
   test('get list of events after user selects a city', async () => {
     const AppWrapper = mount(<App />);
@@ -47,5 +48,4 @@ describe('<App /> integration', () => {
     expect(AppWrapper.find('.event')).toHaveLength(4);
     AppWrapper.unmount();
   })
-
 });

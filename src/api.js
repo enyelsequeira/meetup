@@ -60,7 +60,7 @@ async function getEvents(lat, lon) {
 
 };
 
-async function getNewListOfEvents(lat, lon, page) {
+async function getNewListOfEvents(lat, lon, page = '1') {
   if (window.location.href.startsWith('http://localhost')) {
     return mockEvents.events;
   }
