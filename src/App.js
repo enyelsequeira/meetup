@@ -17,11 +17,28 @@ class App extends Component{
 
   state = {
     events: [],
+    page: null,
     defaultCity: '',
-    lat: '',
-    lon: ''
+    lat: null,
+    lon: null
   }
 
+//Please check this. 
+
+
+  // updateEvents = (lat, lon, page) => {
+  //   if(lat && lon) {
+  //     getEvents(lat, lon, this.state.page).then(response => this.setState({ events: response.events, lat: response.city.lat, lon: response.city.lon }));
+  //   }
+  //   else if (page) {
+  //     getEvents(this.state.lat, this.state.lon, page).then(response => this.setState({ events: response.events, page: page }));
+  //   }
+  //   else {
+  //     getEvents(this.state.lat, this.state.lon, this.state.page).then(response => this.setState({ events: response.events }));
+  //   }
+  // }
+
+  // not sure why the above is given me error
 
   updateEvents = (lat, lon) => {
     getEvents(lat, lon).then(events => this.setState({ events }));
@@ -38,7 +55,8 @@ updateNumberOfEvents = (lat, lon, page) => {
       <div className="App">
          <CitySearch updateEvents={this.updateEvents} defaultCity={this.state.defaultCity} />
         <EventList events={this.state.events} />
-        <NumberOfEvents updateNumberOfEvents={this.updateNumberOfEvents} numberOfEvents={this.state.events.length} lat={this.state.lat} lon={this.state.lon} />
+        <NumberOfEvents updateEvents={this.updateEvents} numberOfEvents={this.state.events.length} lat={this.state.lat} lon={this.state.lon} />
+      
 
       </div>
     );
