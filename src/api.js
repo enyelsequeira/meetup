@@ -42,7 +42,7 @@ async function getSuggestions(query) {
 
 async function getEvents(lat, lon, page) {
   if (window.location.href.startsWith('http://localhost')) {
-    return mockEvents.events;
+    return mockEvents;
   }
 
   const token = await getAccessToken();
@@ -65,25 +65,25 @@ async function getEvents(lat, lon, page) {
   }
 };
 
-// async function getNewListOfEvents(lat, lon, page = '1') {
-//   if (window.location.href.startsWith('http://localhost')) {
-//     return mockEvents.events;
-//   }
+async function getNewListOfEvents(lat, lon, page = '1') {
+  if (window.location.href.startsWith('http://localhost')) {
+    return mockEvents.events;
+  }
   
-//   const token = await getAccessToken();
+  const token = await getAccessToken();
 
-//   if (token) {
-//     let url = 'https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public'
-//       + '&access_token=' + token;
+  if (token) {
+    let url = 'https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public'
+      + '&access_token=' + token;
 
-//     if (lat && lon && page) {
-//       url += '&lat=' + lat + '&lon=' + lon + '&page=' + page;
-//     }
-//     const result = await axios.get(url);
-//     return result.data;
-//   }
+    if (lat && lon && page) {
+      url += '&lat=' + lat + '&lon=' + lon + '&page=' + page;
+    }
+    const result = await axios.get(url);
+    return result.data;
+  }
 
-// };
+};
   
 
 
@@ -136,4 +136,4 @@ function getAccessToken(){
     return tokenInfo.data.access_token;
   };
 
-export { getSuggestions, getEvents, getAccessToken }
+export { getSuggestions, getEvents, getAccessToken, getNewListOfEvents }
