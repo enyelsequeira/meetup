@@ -4,16 +4,20 @@ import EventList from './EventList';
 import CitySearch from "./CitySearch";
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents } from './api'
-import { getNewListOfEvents} from './api'
+// import { getNewListOfEvents} from './api'
 
 
 
 
 class App extends Component{
 
-  componentDidMount() {
-    getEvents().then(response => this.setState({ events: response.events, defaultCity: response.city.city, lat: response.city.lat, lon: response.city.lon }));
+  componentDidMount(){
+    getEvents().then(response => this.setState({ events: response }));
   }
+
+  // componentDidMount() {
+  //   getEvents().then(response => this.setState({ events: response.events, defaultCity: response.city.city, lat: response.city.lat, lon: response.city.lon }));
+  // }
 
   state = {
     events: [],
@@ -23,37 +27,34 @@ class App extends Component{
     lon: null
   }
 
-//Please check this. 
-
-
-  // updateEvents = (lat, lon, page) => {
-  //   if(lat && lon) {
-  //     getEvents(lat, lon, this.state.page).then(response => this.setState({ events: response.events, lat: response.city.lat, lon: response.city.lon }));
-  //   }
-  //   else if (page) {
-  //     getEvents(this.state.lat, this.state.lon, page).then(response => this.setState({ events: response.events, page: page }));
-  //   }
-  //   else {
-  //     getEvents(this.state.lat, this.state.lon, this.state.page).then(response => this.setState({ events: response.events }));
-  //   }
-  // }
-
-  // not sure why the above is given me error
-
-  updateEvents = (lat, lon) => {
-    getEvents(lat, lon).then(events => this.setState({ events }));
+  updateEvents = (lat, lon, page) => {
+    if(lat && lon) {
+      getEvents(lat, lon, this.state.page).then(response => this.setState({ events: response, lat, lon }));
+    }
+    else if (page) {
+      getEvents(this.state.lat, this.state.lon, page).then(response => this.setState({ events: response, page }));
+    }
+    else {
+      getEvents(this.state.lat, this.state.lon, this.state.page).then(response => this.setState({ events: response }));
+    }
   }
 
-updateNumberOfEvents = (lat, lon, page) => {
-  getNewListOfEvents(lat, lon, page).then(response => this.setState({ events: response.events }));
-}
+
+
+//   updateEvents = (lat, lon) => {
+//     getEvents(lat, lon).then(events => this.setState({ events }));
+//   }
+
+// updateNumberOfEvents = (lat, lon, page) => {
+//   getNewListOfEvents(lat, lon, page).then(response => this.setState({ events: response.events }));
+// }
 
 
   
   render(){
     return(
       <div className="App">
-         <CitySearch updateEvents={this.updateEvents} defaultCity={this.state.defaultCity} />
+        <CitySearch updateEvents={this.updateEvents} />
         <EventList events={this.state.events} />
         <NumberOfEvents updateEvents={this.updateEvents} numberOfEvents={this.state.events.length} lat={this.state.lat} lon={this.state.lon} />
       
