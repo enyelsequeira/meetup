@@ -1,11 +1,12 @@
-import { loadFeature, defineFeature } from 'jest-cucumber';
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { defineFeature, loadFeature } from 'jest-cucumber';
 import App from '../App';
-import { mockEvents } from '../mock-events';
 import CitySearch from '../CitySearch';
+import { mount, shallow } from 'enzyme';
+import { mockEvents } from '../mock-events';
+// './src/features/filterEventsByCity.feature'
 
-const feature = loadFeature('./src/features/filterEventsByCity.feature');
+const feature = loadFeature('../features/filterEventsByCity.feature');
 
 defineFeature(feature, test => {
     test('By default, when user hasn’t searched for a city, show upcoming events based on the user’s location', ({ given, when, then }) => {

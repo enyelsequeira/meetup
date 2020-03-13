@@ -3,8 +3,9 @@ import App from '../App';
 import { loadFeature, defineFeature } from 'jest-cucumber';
 import { mount } from 'enzyme';
 import { mockEvents } from '../mock-events';
+//'./src/features/showHideAnEvents.feature'
 
-const feature = loadFeature('./src/features/showHideAnEventsDetails.feature.txt');
+const feature = loadFeature('../features/showHideAnEventsDetails.test.js');
 
 defineFeature(feature, test => {
   test('An event element is collapsed by default', ({ given, and, when, then }) => {

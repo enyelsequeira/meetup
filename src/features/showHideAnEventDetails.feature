@@ -9,7 +9,7 @@ Scenario: An event element is collapsed by default
 Scenario: User can expand an event to see its details
   Given app loaded
   And the list of events has been loaded
-  When the user clicks the button „show Details“
+  When the user clicks the button show Details“
   Then the event element should expand and show more information
 
 Scenario: User can collapse an event to hide its details

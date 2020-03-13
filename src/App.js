@@ -20,7 +20,6 @@ class App extends Component{
   // }
 
   state = {
-    events: [],
     page: null,
     defaultCity: '',
     lat: null,
@@ -55,8 +54,15 @@ class App extends Component{
     return(
       <div className="App">
         <CitySearch updateEvents={this.updateEvents} />
-        <EventList events={this.state.events} />
-        <NumberOfEvents updateEvents={this.updateEvents} numberOfEvents={this.state.events.length} lat={this.state.lat} lon={this.state.lon} />
+        {this.state.events && <EventList events={this.state.events} /> }
+        {/* <EventList events={this.state.events} /> */}
+        {this.state.events && <NumberOfEvents
+        updateEvents={this.updateEvents}
+        NumberOfEvents={this.state.events.length}
+        lat={this.state.lat}
+        lon={this.state.lon}
+        /> }
+        {/* <NumberOfEvents updateEvents={this.updateEvents} numberOfEvents={this.state.events.length} lat={this.state.lat} lon={this.state.lon} /> */}
       
 
       </div>
