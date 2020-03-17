@@ -33,7 +33,8 @@ async function getSuggestions(query) {
       + query
       + '&access_token=' + token;
     const result = await axios.get(url);
-    return result.data;
+    const events = result.data.events;
+    return events;
   }
 
   return [];
@@ -42,7 +43,7 @@ async function getSuggestions(query) {
 
 async function getEvents(lat, lon, page) {
   if (window.location.href.startsWith('http://localhost')) {
-    return mockEvents;
+    return mockEvents.events;
   }
   const token = await getAccessToken();
   if (token) {
@@ -59,12 +60,13 @@ async function getEvents(lat, lon, page) {
       url += '&lat=' + lat + '&lon=' + lon + '&page=' + page;
     }
     const result = await axios.get(url);
-    const events = result.data.events
-
-    return events
+    return result.data;
   }
 };
 
+
+
+//testing 
 
 // async function getNewListOfEvents(lat, lon, page = '1') {
 //   if (window.location.href.startsWith('http://localhost')) {

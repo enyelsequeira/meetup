@@ -1,8 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import CitySearch from '../CitySearch';
-
-
 describe('<CitySearch /> component', () => {
   let CitySearchWrapper;
   beforeAll(() => {
@@ -30,7 +28,6 @@ describe('<CitySearch /> component', () => {
       expect(CitySearchWrapper.find('.suggestions li').at(i).text()).toBe(suggestions[i].name_string);
     }
   });
-
   test('click on suggestion should change query state and empty list of suggestions', () => {
     CitySearchWrapper = shallow(<CitySearch updateEvents={() => {}}/>);
     CitySearchWrapper.setState({
