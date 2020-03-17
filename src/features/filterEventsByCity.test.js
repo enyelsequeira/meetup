@@ -12,9 +12,12 @@ defineFeature(feature, test => {
     given('user hasn’t searched for any city', () => {
 
     });
+
     let AppWrapper;
     when('the user opens the app', () => {
       AppWrapper = mount(<App />);
+
+
     });
 
     then('the user should see the list of upcoming events from their location', () => {
@@ -24,6 +27,7 @@ defineFeature(feature, test => {
   });
 
   test('User should see a list of suggestions when they search for a city', ({ given, when, then }) => {
+
     let CitySearchWrapper;
     given('the main page is open', () => {
       CitySearchWrapper = shallow(<CitySearch />);
@@ -46,9 +50,11 @@ defineFeature(feature, test => {
       AppWrapper.find('.city').simulate('change', { target: { value: 'Munich' } });
     });
 
+
     and('the list of suggested cities is showing', () => {
       AppWrapper.update();
       expect(AppWrapper.find('.suggestions li')).toHaveLength(2);
+
     });
 
     when('the user selects a city (e.g., “Munich, Germany”) from the list', () => {
@@ -62,6 +68,7 @@ defineFeature(feature, test => {
 
     and('the user should receive a list of upcoming events in that city', () => {
       expect(AppWrapper.find('.event')).toHaveLength(mockEvents.events.length);
+      
     });
   });
 });

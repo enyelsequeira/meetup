@@ -5,6 +5,7 @@ import EventList from '../EventList';
 import CitySearch from '../CitySearch';
 import NumberOfEvents from '../NumberOfEvents';
 import { mockEvents } from '../mock-events';
+
 describe('<App /> component', () => {
   let AppWrapper;
   beforeAll(() => {
