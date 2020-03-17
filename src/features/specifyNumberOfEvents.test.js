@@ -4,9 +4,8 @@ import NumberOfEvents from '../NumberOfEvents';
 import { loadFeature, defineFeature } from 'jest-cucumber';
 import { mount } from 'enzyme';
 import { mockEvents } from '../mock-events';
-//'./src/features/specifyNumberOfEvents.feature'
 
-const feature = loadFeature('../features/specifyNumberOfEvents.feature');
+const feature = loadFeature('src/features/specifyNumberOfEvents.feature');
 
 defineFeature(feature, test => {
   test('If user hasn’t specified a number, 32 is the default number.', ({ given, when, then }) => {
@@ -44,4 +43,4 @@ defineFeature(feature, test => {
       expect(NumberOfEventsWrapper.state('numberOfEvents')).toBe(13);
     });
   });
-}); 
+});
