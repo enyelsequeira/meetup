@@ -40,7 +40,7 @@ defineFeature(feature, test => {
       expect(AppWrapper.find('.event')).toHaveLength(mockEvents.events.length);
     });
 
-    when('the user clicks the button „show Details“', () => {
+    when('the user clicks the button show Details“', () => {
       AppWrapper.find('.event .details-btn').at(0).simulate('click')
     });
 
