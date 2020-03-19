@@ -99,7 +99,8 @@ function getAccessToken(){
   
 
       if (!code) {
-        window.location.href = 'https://secure.meetup.com/oauth2/authorize?client_id=rhn3t2og7hsen40fqej3nr42e6&response_type=code&redirect_uri=https://enyelsequeira.github.io/';
+        window.location.href = 'https://secure.meetup.com/oauth2/authorize?client_id=rhn3t2og7hsen40fqej3nr42e6&response_type=code&redirect_uri=https://enyelsequeira.github.io/meetup/';
+        // window.location.href = 'https://secure.meetup.com/oauth2/authorize?client_id=rhn3t2og7hsen40fqej3nr42e6&response_type=code&redirect_uri=https://enyelsequeira.github.io/';
         }
         return getOrRenewAccessToken('get', code);
     }
