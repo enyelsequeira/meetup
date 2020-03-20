@@ -10,20 +10,21 @@ class CitySearch extends Component {
   };
 
 
-  handleInputChanged = async (event) => {
+  handleInputChanged = event => {
     const value = event.target.value;
     this.setState({ query: value });
-    const apiSuggestions = await getSuggestions(value);
-    if (Array.isArray(apiSuggestions) === false || apiSuggestions.length === 0) {
-      this.setState({
-        infoText: ' We can not find the city you are looking for. Please try another city',
-      });
-    } else {
-      this.setState({
-        infoText: '',
-        suggestions: [...apiSuggestions]
-      });
-    }
+    getSuggestions(value).then(suggestions => {
+      if (Array.isArray(suggestions)) this.setState({ suggestions });
+      if (Array.isArray(suggestions) === false || suggestions.length === 0) {
+        this.setState({
+          infoText: ' We can not find the city you are looking for. Please try another city',
+        });
+      } else {
+        this.setState({
+          infoText: '',
+        });
+      }
+    })
   };
 
   // handleInputChanged = event => {
