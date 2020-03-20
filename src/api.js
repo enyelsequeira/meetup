@@ -30,14 +30,12 @@ async function getSuggestions(query) {
       query +
       '&access_token=' + token;
     const result = await axios.get(url);
-    console.log('new' , result)
-    return results
+    console.log('testing results', result)
+    return result;
     
   }
   return [];
-
 };
-
 
 
 async function getEvents(lat, lon, page) {
