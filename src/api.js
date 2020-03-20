@@ -31,8 +31,11 @@ async function getSuggestions(query) {
       '&access_token=' + token;
     const result = await axios.get(url);
     return result;
+    console.log('new' , result)
+    
   }
   return [];
+
 };
 
 

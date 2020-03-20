@@ -24,6 +24,7 @@ class CitySearch extends Component {
         suggestions: [...apiSuggestions]
       });
     }
+    console.log( 'testing', this.setState)
   };
 //   handleInputChanged = event => {
 //     const value = event.target.value;
