@@ -3,8 +3,7 @@ import { mockEvents } from './mock-events';
 
 async function getSuggestions(query) {
   if (window.location.href.startsWith('http://localhost')) {
-    return [
-      {
+    return [{
         city: 'Munich',
         country: 'de',
         localized_country_name: 'Germany',
@@ -25,18 +24,14 @@ async function getSuggestions(query) {
       }
     ];
   }
-
   const token = await getAccessToken();
-
   if (token) {
-    const url = 'https://api.meetup.com/find/locations?&sign=true&photo-host=public&query='
-      + query
-      + '&access_token=' + token;
+    const url = 'https://api.meetup.com/find/locations?&sign=true&photo-host=public&query=' +
+      query +
+      '&access_token=' + token;
     const result = await axios.get(url);
-    const events = result.data.events;
-    return events;
+    return result;
   }
-
   return [];
 };
 
