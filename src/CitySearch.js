@@ -24,7 +24,7 @@ class CitySearch extends Component {
         suggestions: [...apiSuggestions]
       });
     }
-    console.log( 'testing', this.setState)
+    console.log( 'testing', apiSuggestions)
   };
 //   handleInputChanged = event => {
 //     const value = event.target.value;
