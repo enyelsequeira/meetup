@@ -14,8 +14,9 @@ class CitySearch extends Component {
     const value = event.target.value;
     this.setState({ query: value });
     const apiSuggestions = await getSuggestions(value);
+    console.log('Suggestions', apiSuggestions);
     if (Array.isArray(apiSuggestions)) this.setState({ suggestions: [...apiSuggestions] });
-    if (value && this.state.suggestions.length === 0) {
+    if (Array.isArray(apiSuggestions) === false || apiSuggestions.length === 0) {
       this.setState({
         infoText: ' We can not find the city you are looking for. Please try another city',
       });
@@ -66,6 +67,7 @@ class CitySearch extends Component {
   };
 
   render() {
+    console.log('state', this.state);
     return (
       <div className="CitySearch">
         <InfoAlert text={this.state.infoText} />
