@@ -25,23 +25,6 @@ class CitySearch extends Component {
       });
     }
   };
-
-  // handleInputChanged = event => {
-  //   const value = event.target.value;
-  //   this.setState({ query: value });
-  //   getSuggestions(value).then(suggestions => {
-  //     suggestions && this.setState({ suggestions })
-  //     if (value && this.state.suggestions.length === 0) {
-  //       this.setState({
-  //         infoText: ' We can not find the city you are looking for. Please try another city',
-  //       });
-  //     } else {
-  //       this.setState({
-  //         infoText: '',
-  //       });
-  //     }
-  //   })
-  // };
 //   handleInputChanged = event => {
 //     const value = event.target.value;
 //     this.setState({ query: value });
