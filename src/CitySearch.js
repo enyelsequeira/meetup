@@ -13,8 +13,7 @@ class CitySearch extends Component {
     const value = event.target.value;
     this.setState({ query: value });
     getSuggestions(value).then(suggestions => {
-    suggestions && this.setState({ suggestions });
-    console.log('one', suggestions)
+     this.setState({ suggestions });
 
     if (value && suggestions.length === 0 ){
       this.setState({
