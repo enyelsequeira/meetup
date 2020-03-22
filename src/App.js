@@ -45,8 +45,8 @@ class App extends Component{
   }
 
   countEventsOnADate = date => {
+    if(this.state.events === undefined) return 0;
     let count = 0;
-
     for (let i = 0; i < this.state.events.length; i += 1) {
       if (this.state.events[i].local_date === date) {
         count += 1;
@@ -55,6 +55,7 @@ class App extends Component{
     }
     return count;
   };
+
 
   getData = () =>{
     const next7Days =[];  // Create empty array for the next 7 days
