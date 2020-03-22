@@ -9,41 +9,38 @@ import moment from 'moment'
 import  { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
 
+
+
 class App extends Component{
   state = {
     page: null,
     defaultCity: '',
     lat: null,
     lon: null,
-    events: []
   }
-
+  
  
   componentDidMount() {
     getEvents()
       .then(response => {
         console.log('test');
         console.log(response.events);
-        this.setState({ events: response.events })
+        this.setState({ events: response })
       });
   }
 
-
   updateEvents = (lat, lon, page) => {
     if(lat && lon) {
-      getEvents(lat, lon, this.state.page)
-      // here it is, broken, notice how events are no longer just events
-        .then(response => this.setState({ events: response, lat, lon }));
+   
+      getEvents(lat, lon, this.state.page).then(response => this.setState({ events: response, lat, lon }));
     }
     else if (page) {
-      getEvents(this.state.lat, this.state.lon, page)
-      // here it is, broken, notice how events are no longer just events
-        .then(response => this.setState({ events: response.events, page }));
+          
+      getEvents(this.state.lat, this.state.lon, page).then(response => this.setState({ events: response, page }));
     }
     else {
-      getEvents(this.state.lat, this.state.lon, this.state.page)
-      // here it is, broken, notice how events are no longer just events
-        .then(response => this.setState({ events: response.events }));
+    
+      getEvents(this.state.lat, this.state.lon, this.state.page).then(response => this.setState({ events: response }));
       }
   }
 
@@ -101,6 +98,7 @@ class App extends Component{
 
         </ResponsiveContainer>
 
+       {console.log(this.state.events, 1)}
       {this.state.events && <EventList events={this.state.events} />}
     
     </div>

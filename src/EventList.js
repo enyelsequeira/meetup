@@ -7,11 +7,11 @@ const EventList = ({ events: { events } }) => {
 return(
     <ul className="EventList">
       {console.log(events)}
-    {/* {events.map(event =>
+    {events.map(event =>
       <li key={event.id}>
         <Event event={event} />
       </li>
-    )} */}
+    )}
   </ul> 
   );
 }
