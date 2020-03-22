@@ -33,7 +33,7 @@ async function getSuggestions(query) {
     console.log('testing results', result)
     console.log( 'another teest' , result.data)
     // return result.data;
-    const events = result.data.events;
+    const events = result.data;
     if(events.length) {
       localStorage.setItem('lastEvents', JSON.stringify(events));
     }
