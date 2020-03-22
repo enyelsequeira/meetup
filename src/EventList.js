@@ -2,14 +2,16 @@ import React from 'react';
 import Event from './Event';
 
 
-const EventList = ({events: { events } }) => {
-  return(
+const EventList = ({ events: { events } }) => {
+
+return(
     <ul className="EventList">
-    {events.map(event =>
+      {console.log(events)}
+    {/* {events.map(event =>
       <li key={event.id}>
         <Event event={event} />
       </li>
-    )}
+    )} */}
   </ul> 
   );
 }

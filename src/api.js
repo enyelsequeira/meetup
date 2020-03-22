@@ -72,7 +72,6 @@ async function getEvents(lat, lon, page) {
 };
 
 
-
 //testing 
 
 // async function getNewListOfEvents(lat, lon, page = '1') {
