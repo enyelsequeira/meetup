@@ -13,6 +13,7 @@ import  { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, Responsiv
 
 class App extends Component{
   state = {
+    events: [],
     page: null,
     defaultCity: '',
     lat: null,
@@ -45,10 +46,10 @@ class App extends Component{
   }
 
   countEventsOnADate = date => {
-    if(this.state.events === undefined) return 0;
+    if(this.state.events.events === undefined) return 0;
     let count = 0;
-    for (let i = 0; i < this.state.events.length; i += 1) {
-      if (this.state.events[i].local_date === date) {
+    for (let i = 0; i < this.state.events.events.length; i += 1) {
+      if (this.state.events.events[i].local_date === date) {
         count += 1;
       }
      
@@ -58,16 +59,20 @@ class App extends Component{
 
 
   getData = () =>{
+    console.log(this.state.events, 2)
     const next7Days =[];  // Create empty array for the next 7 days
     const currentDate = moment();  // Today
     //loop 7 times for the next 7 days
 
     for(let i =0; i < 7; i +=1){
-      currentDate.add(1, 'days'); // Add 1 day to current date, currentDate changes
       const dateString = currentDate.format('YYYY-MM-DD'); // Format the date
+      console.log(dateString)
 
-      const count = this.countEventsOnADate(dateString);  // Use the countEventsOnADate function to count #events on this date
+      
+      const count = this.countEventsOnADate(dateString); 
+      console.log(count) // Use the countEventsOnADate function to count #events on this date
       next7Days.push({ date: dateString, number: count}); // Add this date and number to the list
+      currentDate.add(1, 'days'); // Add 1 day to current date, currentDate changes
     }
     return next7Days
   }
@@ -100,7 +105,7 @@ class App extends Component{
         </ResponsiveContainer>
 
        {console.log(this.state.events, 1)}
-      {this.state.events && <EventList events={this.state.events} />}
+      {this.state.events.events && <EventList events={this.state.events.events} />}
     
     </div>
   );
