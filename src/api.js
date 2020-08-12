@@ -30,8 +30,8 @@ async function getSuggestions(query) {
       query +
       '&access_token=' + token;
     const result = await axios.get(url);
-    console.log('testing results', result)
-    console.log( 'another teest' , result.data)
+    // console.log('testing results', result)
+    // console.log( 'another teest' , result.data)
     // return result.data;
     const events = result.data;
     if(events.length) {

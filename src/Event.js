@@ -22,6 +22,8 @@ class Event extends Component {
     const data=[{ name: "people coming", value: event.yes_rsvp_count }, { name: "open slots", value: (event.rsvp_limit - event.yes_rsvp_count) }];
     const colors =[ "#8884d8", "#37c0ba"];
 
+    // const createMarkup = () => ({__html: this.props.event.description});
+    
     return(
       <div className="event">
         <div className="event__Overview">
@@ -48,17 +50,19 @@ class Event extends Component {
             <p>{event.yes_rsvp_count} People coming</p>
           }
           {showDetails &&
-            <button className="details-btn" onClick={() => this.handleShowDetails()}>hide details</button>
+            <button className="details-btn" onClick={this.handleShowDetails}>hide details</button>
           }
           {!showDetails &&
-            <button className="details-btn" onClick={() => this.handleShowDetails()}>show details</button>
+            <button className="details-btn" onClick={this.handleShowDetails}>show details</button>
           }
         </div>
         {showDetails &&
           <div className="event__Details">
             <h3>Infos</h3>
             <h4><a href={this.props.event.link} target="blank">GoTo MeetUp</a></h4>
-            <p className="event__Details--description">{this.props.event.description}</p>
+            {console.log(this.props.event.description)}
+            <div dangerouslySetInnerHTML={{__html: this.props.event.description}} />
+            {/* <p dangerouslySetInnerHTML={createMarkup()} className="event__Details--description">{this.props.event.description}</p> */}
           </div>
         }
       </div>

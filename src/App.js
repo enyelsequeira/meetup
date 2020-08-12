@@ -6,9 +6,11 @@ import NumberOfEvents from './NumberOfEvents';
 import { getEvents } from './api';
 // import { getNewListOfEvents } from './api'
 import moment from 'moment'
-import  { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
+// import  { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
-
+import {
+  BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
+} from 'recharts';
 
 
 class App extends Component{
@@ -66,11 +68,11 @@ class App extends Component{
 
     for(let i =0; i < 7; i +=1){
       const dateString = currentDate.format('YYYY-MM-DD'); // Format the date
-      console.log(dateString)
+      // console.log(dateString)
 
       
       const count = this.countEventsOnADate(dateString); 
-      console.log(count) // Use the countEventsOnADate function to count #events on this date
+      // console.log(count) // Use the countEventsOnADate function to count #events on this date
       next7Days.push({ date: dateString, number: count}); // Add this date and number to the list
       currentDate.add(1, 'days'); // Add 1 day to current date, currentDate changes
     }
@@ -79,6 +81,7 @@ class App extends Component{
 
   render() {
     // console.log('test', this.state)
+    console.log(1, this.getData())
     return (
 
       <div className="App">
@@ -88,8 +91,25 @@ class App extends Component{
         numberOfEvents={this.state.events.length}
         lat={this.state.lat} 
         lon={this.state.lon} />}
-
+<ResponsiveContainer  height={400}>
+        <BarChart
+         data={this.getData()}
+          margin={{
+            top: 20, right: 20, bottom: 20, left: 20,
+          }}>
+            <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="category" name ="data" />
+        <YAxis dataKey="nummber" name="Number of Events"  />
+        <Tooltip cursor={{ strokeDasharray: '3 3' }}  />
+        <Legend />
+        <Bar dataKey="date" fill="#8884d8" />
+          </BarChart>
+            </ResponsiveContainer>
+            
+          {/* </ResponsiveContainer>  */}
+{/* 
         <ResponsiveContainer height={400} >
+          
         <ScatterChart
           margin={{
             top: 20, right: 20, bottom: 20, left: 20,
@@ -102,7 +122,7 @@ class App extends Component{
             <Scatter  data={this.getData()} fill="#8884d8" />
         </ScatterChart>
 
-        </ResponsiveContainer>
+        </ResponsiveContainer> */}
 
        {console.log(this.state.events, 1)}
       {this.state.events.events && <EventList events={this.state.events.events} />}
