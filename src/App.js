@@ -26,8 +26,8 @@ class App extends Component{
   componentDidMount() {
     getEvents()
       .then(response => {
-        console.log('test');
-        console.log(response.events);
+        // console.log('test');
+        // console.log(response.events);
         this.setState({ events: response })
       });
   }
@@ -68,7 +68,7 @@ class App extends Component{
 
     for(let i =0; i < 7; i +=1){
       const dateString = currentDate.format('YYYY-MM-DD'); // Format the date
-      console.log(dateString)
+      // console.log(dateString)
 
       
       const count = this.countEventsOnADate(dateString); 
@@ -81,7 +81,7 @@ class App extends Component{
 
   render() {
     // console.log('test', this.state)
-    console.log(1, this.getData())
+    // console.log(1, this.getData())
     return (
 
       <div className="App">
@@ -126,7 +126,7 @@ class App extends Component{
 
         </ResponsiveContainer> */}
 
-       {console.log(this.state.events, 1)}
+       {/* {console.log(this.state.events, 1)} */}
       {this.state.events.events && <EventList events={this.state.events.events} />}
     
     </div>

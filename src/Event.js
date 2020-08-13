@@ -60,7 +60,7 @@ class Event extends Component {
           <div className="event__Details">
             <h3>Infos</h3>
             <h4><a href={this.props.event.link} target="blank">GoTo MeetUp</a></h4>
-            {console.log(this.props.event.description)}
+            {/* {console.log(this.props.event.description)} */}
             <div dangerouslySetInnerHTML={{__html: this.props.event.description}} />
             {/* <p dangerouslySetInnerHTML={createMarkup()} className="event__Details--description">{this.props.event.description}</p> */}
           </div>

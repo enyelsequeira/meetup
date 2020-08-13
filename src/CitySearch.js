@@ -24,7 +24,7 @@ class CitySearch extends Component {
         suggestions: [...apiSuggestions]
       });
     }
-    console.log( 'testing', apiSuggestions)
+    // console.log( 'testing', apiSuggestions)
   };
 //   handleInputChanged = event => {
 //     const value = event.target.value;
@@ -50,7 +50,7 @@ class CitySearch extends Component {
   };
 
   render() {
-    console.log('state', this.state);
+    // console.log('state', this.state);
     return (
       <div className="CitySearch">
         <InfoAlert text={this.state.infoText} />
