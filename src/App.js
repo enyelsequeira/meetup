@@ -61,7 +61,7 @@ class App extends Component{
 
 
   getData = () =>{
-    console.log(this.state.events, 2)
+    // console.log(this.state.events, 2)
     const next7Days =[];  // Create empty array for the next 7 days
     const currentDate = moment();  // Today
     //loop 7 times for the next 7 days
@@ -93,15 +93,17 @@ class App extends Component{
         lon={this.state.lon} />}
         <ResponsiveContainer  height={400}>
           <BarChart
-          data={this.getData()}
+          data={this.getData()} fill="#8884d8"
             margin={{
               top: 20, right: 20, bottom: 20, left: 20,
             }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis type="category" dataKey="date" name="date"  />
-              <YAxis type="number" dataKey="number" name="number of events" />
+              <YAxis type="number" dataKey="number"  name="number of events" />
+              <Bar type="number" dataKey="number"  name="number of events" fill="#8884d8"  />
+
               <Tooltip cursor={{ strokeDasharray: '3 3' }}  />
-              <Legend />
+              <Legend  />
               <Bar dataKey="date" fill="#8884d8" />
           </BarChart>
         </ResponsiveContainer>
