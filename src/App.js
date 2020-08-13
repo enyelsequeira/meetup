@@ -68,7 +68,7 @@ class App extends Component{
 
     for(let i =0; i < 7; i +=1){
       const dateString = currentDate.format('YYYY-MM-DD'); // Format the date
-      // console.log(dateString)
+      console.log(dateString)
 
       
       const count = this.countEventsOnADate(dateString); 
