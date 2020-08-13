@@ -91,20 +91,20 @@ class App extends Component{
         numberOfEvents={this.state.events.length}
         lat={this.state.lat} 
         lon={this.state.lon} />}
-<ResponsiveContainer  height={400}>
-        <BarChart
-         data={this.getData()}
-          margin={{
-            top: 20, right: 20, bottom: 20, left: 20,
-          }}>
-            <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="category" name ="data" />
-        <YAxis dataKey="nummber" name="Number of Events"  />
-        <Tooltip cursor={{ strokeDasharray: '3 3' }}  />
-        <Legend />
-        <Bar dataKey="date" fill="#8884d8" />
+        <ResponsiveContainer  height={400}>
+          <BarChart
+          data={this.getData()}
+            margin={{
+              top: 20, right: 20, bottom: 20, left: 20,
+            }}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis type="category" dataKey="date" name="date"  />
+              <YAxis type="number" dataKey="number" name="number of events" />
+              <Tooltip cursor={{ strokeDasharray: '3 3' }}  />
+              <Legend />
+              <Bar dataKey="date" fill="#8884d8" />
           </BarChart>
-            </ResponsiveContainer>
+        </ResponsiveContainer>
             
           {/* </ResponsiveContainer>  */}
 {/* 
