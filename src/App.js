@@ -97,10 +97,10 @@ class App extends Component{
             margin={{
               top: 20, right: 20, bottom: 20, left: 20,
             }}>
-              <CartesianGrid strokeDasharray="3 3" />
+              <CartesianGrid  />
               <XAxis type="category" dataKey="date" name="date"  />
               <YAxis type="number" dataKey="number"  name="number of events" />
-              <Bar type="number" dataKey="number"  name="number of events" fill="#8884d8"  />
+              <Bar type="number" dataKey="number"  name="number of events"  />
 
               <Tooltip cursor/>
               <Legend  />
