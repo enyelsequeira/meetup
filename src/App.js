@@ -102,7 +102,7 @@ class App extends Component{
               <YAxis type="number" dataKey="number"  name="number of events" />
               <Bar type="number" dataKey="number"  name="number of events"  />
 
-              <Tooltip cursor/>
+              {/* <Tooltip cursor/> */}
               <Legend  />
               <Bar dataKey="date" fill="#8884d8" />
           </BarChart>
