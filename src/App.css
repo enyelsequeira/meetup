@@ -1,4 +1,75 @@
 .App {
+  min-width: 100%;
+  background: #004643;
+  color: #fffffe;
+}
+.container {
+}
+.chart {
+}
+.events {
+}
+
+.CitySearch {
+  display: flex;
+  flex-direction: column;
+}
+
+.numberOfEvents {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  max-width: 80%;
+  margin: 1.2em auto;
+}
+.label {
+  margin: 0 1.2em;
+}
+
+#numberOfEvents__input {
+  margin-right: 1em;
+}
+.suggestions {
+  align-self: center;
+}
+.suggestion {
+  margin-bottom: 1em;
+  list-style: none;
+}
+.EventList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.event {
+  list-style: none;
+  max-width: 80%;
+  align-self: center;
+  margin: auto;
+}
+.event__name {
+  text-align: center;
+}
+.event__date {
+  text-align: center;
+}
+.details-btn {
+  margin: 2em;
+  font-size: 0.6em;
+  padding: 1em 4em;
+  background: #f9bc60;
+}
+a {
+  text-decoration: none;
+  color: #f9bc60;
+}
+
+.eventInformation {
+  color: #abd1c6;
+  text-align: center;
+}
+/* .App {
   text-align: center;
   padding: 2% 5%;
 }
@@ -31,10 +102,7 @@ input[type="text"], input[type="number"] {
   width: 250px;
 }
 
-.CitySearch {
-  display: flex;
-  flex-direction: column;
-}
+
 
 .suggestions {
   width: 250px;
@@ -101,4 +169,4 @@ input[type="text"], input[type="number"] {
   width: 200px;
   margin: 20px 0 50px;
   text-align: left;
-}
+} */
