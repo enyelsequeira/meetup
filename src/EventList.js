@@ -5,7 +5,7 @@ const EventList = ({ events }) => {
   return (
     <ul className="EventList">
       {events.map((event) => (
-        <li key={event.id}>
+        <li className="city" key={event.id}>
           <Event event={event} />
         </li>
       ))}

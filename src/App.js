@@ -112,11 +112,24 @@ class App extends Component {
                 }}
               >
                 <CartesianGrid />
-                <XAxis type="category" dataKey="date" name="date" />
-                <YAxis type="number" dataKey="number" name="number of events" />
-                <Bar type="number" dataKey="number" name="number of events" />
+                <XAxis
+                  type="category"
+                  dataKey="date"
+                  name="date"
+                  label={{ value: 'Date', angle: 0, position: 'insideLeft' }}
+                />
+                <YAxis
+                  label={{
+                    value: 'Events',
+                    angle: -90,
+                    position: 'insideLeft',
+                  }}
+                  type="number"
+                  dataKey="number"
+                  name="number of events"
+                />
                 <Legend />
-                <Bar dataKey="date" fill="#8884d8" />
+                <Bar dataKey="Events" fill="#8884d8" />
               </BarChart>
             </ResponsiveContainer>
           </Grid>

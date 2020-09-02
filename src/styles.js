@@ -9,7 +9,6 @@ export default makeStyles((theme) => ({
     width: 400,
     height: 40,
     borderRadius: '15px',
-    border: '1px solid red',
     marginTop: 20,
     [theme.breakpoints.down('xs')]: {
       width: 180,
@@ -33,7 +32,7 @@ export default makeStyles((theme) => ({
   input: {
     background: 'white',
     margin: 'auto',
-    width: '80',
+    width: '100%',
     color: '#e16162',
     borderRadius: '10px',
   },

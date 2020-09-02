@@ -1,6 +1,6 @@
 .App {
   min-width: 100%;
-  background: #004643;
+  background: #004650;
   color: #fffffe;
 }
 .container {
@@ -36,20 +36,36 @@
 .suggestion {
   margin-bottom: 1em;
   list-style: none;
+  border: 1px solid red;
+  width: 100%;
+  border-radius: 5px;
+  background: #f9bc60;
+  color: #001e1d;
+  padding: 0.5em;
+  text-align: center;
+}
+.suggestion:hover {
+  cursor: pointer;
 }
 .EventList {
   list-style: none;
   display: flex;
   flex-direction: column;
 }
+
 .event {
   list-style: none;
   max-width: 80%;
   align-self: center;
-  margin: auto;
+  margin: 2em auto;
 }
 .event__name {
   text-align: center;
+  font-weight: bolder;
+  color: #e8e4e6;
+  line-height: 40px;
+  font-size: 1.2em;
+  padding: 10px 10px;
 }
 .event__date {
   text-align: center;
@@ -60,6 +76,9 @@
   padding: 1em 4em;
   background: #f9bc60;
 }
+.details-btn:hover {
+  cursor: pointer;
+}
 a {
   text-decoration: none;
   color: #f9bc60;
@@ -67,8 +86,9 @@ a {
 
 .eventInformation {
   color: #abd1c6;
-  text-align: center;
+  text-align: left;
 }
+
 /* .App {
   text-align: center;
   padding: 2% 5%;
