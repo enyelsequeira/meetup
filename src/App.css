@@ -61,14 +61,21 @@
   list-style: none;
   max-width: 80%;
   align-self: center;
-  margin: 1.2m auto;
+  margin: 2em auto;
   border: 2px solid #181a19;
   border-radius: 10px;
 }
 .event__details {
   text-align: center;
+  align-self: center;
+  margin-right: 10px;
 }
 .event__chart {
+  border: 1px solid red;
+  align-self: center;
+  justify-content: center;
+  align-content: center;
+  margin-right: 10px;
 }
 .event__information {
 }
