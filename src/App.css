@@ -4,6 +4,7 @@
   color: #fffffe;
 }
 .container {
+  border: 2px solid red;
 }
 .chart {
 }
@@ -54,10 +55,21 @@
 }
 
 .event {
+  display: flex;
+  justify-content: center;
+  flex: 1 1 100px;
   list-style: none;
   max-width: 80%;
   align-self: center;
   margin: 2em auto;
+  border: 2px solid #181a19;
+  border-radius: 10px;
+}
+.event__details {
+}
+.event__chart {
+}
+.event__information {
 }
 .event__name {
   text-align: center;
@@ -67,6 +79,7 @@
   font-size: 1.2em;
   padding: 10px 10px;
 }
+
 .event__date {
   text-align: center;
 }
@@ -82,11 +95,13 @@
 a {
   text-decoration: none;
   color: #f9bc60;
+  margin-left: 10px;
 }
 
 .eventInformation {
   color: #abd1c6;
   text-align: left;
+  margin-left: 10px;
 }
 
 /* .App {

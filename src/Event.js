@@ -35,7 +35,7 @@ class Event extends Component {
 
     return (
       <div className="event">
-        <div className="event__Overview">
+        <div className="event__details">
           <p className="event__name">Name: {this.props.event.name}</p>
           <p className="event__date">Date: {this.props.event.local_date}</p>
           <p className="event__Overview--groupName">
@@ -49,6 +49,8 @@ class Event extends Component {
               | {this.props.event.venue.city}
             </p>
           )}
+        </div>
+        <div className="event__chart">
           {event.rsvp_limit && (
             <ResponsiveContainer height={300} width={300}>
               <PieChart>
@@ -88,8 +90,9 @@ class Event extends Component {
             </button>
           )}
         </div>
+
         {showDetails && (
-          <div>
+          <div className="event__information">
             <h3>Event Information</h3>
             <h4>
               <a href={this.props.event.link} target="blank">
@@ -101,7 +104,6 @@ class Event extends Component {
               className="eventInformation"
               dangerouslySetInnerHTML={{ __html: this.props.event.description }}
             />
-            {/* <p dangerouslySetInnerHTML={createMarkup()} className="event__Details--description">{this.props.event.description}</p> */}
           </div>
         )}
       </div>

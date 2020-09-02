@@ -128,7 +128,12 @@ class App extends Component {
                   dataKey="number"
                   name="number of events"
                 />
-                <Bar type="number" dataKey="number" name="number of events" />
+                <Bar
+                  type="number"
+                  fill="#8884d8"
+                  dataKey="number"
+                  name="number of events"
+                />
                 <Legend />
                 {/* <Bar dataKey="date" fill="#8884d8" /> */}
               </BarChart>
