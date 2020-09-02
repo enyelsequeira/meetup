@@ -4,7 +4,6 @@
   color: #fffffe;
 }
 .container {
-  border: 2px solid red;
 }
 .chart {
 }
@@ -37,7 +36,6 @@
 .suggestion {
   margin-bottom: 1em;
   list-style: none;
-  border: 1px solid red;
   width: 100%;
   border-radius: 5px;
   background: #f9bc60;
@@ -57,13 +55,14 @@
 .event {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   flex: 1 1 100px;
   list-style: none;
   max-width: 80%;
   align-self: center;
-  margin: 2em auto;
-  border: 2px solid #181a19;
-  border-radius: 10px;
+  margin: 1.2em auto;
+  border: 2px solid rgba(0, 0, 0, 0.198);
+  border-radius: 15px;
 }
 .event__details {
   text-align: center;
@@ -71,10 +70,7 @@
   margin-right: 10px;
 }
 .event__chart {
-  border: 1px solid red;
   align-self: center;
-  justify-content: center;
-  align-content: center;
   margin-right: 10px;
 }
 .event__information {
