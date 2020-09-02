@@ -128,8 +128,9 @@ class App extends Component {
                   dataKey="number"
                   name="number of events"
                 />
+                <Bar type="number" dataKey="number" name="number of events" />
                 <Legend />
-                <Bar dataKey="Events" fill="#8884d8" />
+                {/* <Bar dataKey="date" fill="#8884d8" /> */}
               </BarChart>
             </ResponsiveContainer>
           </Grid>
