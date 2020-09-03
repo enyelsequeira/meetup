@@ -4,7 +4,7 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents } from './api';
-import { Grid } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 
 // import { getNewListOfEvents } from './api'
 import moment from 'moment';
@@ -87,65 +87,64 @@ class App extends Component {
 
   render() {
     return (
-      <Grid container className="container" justify="center">
-        <Grid item className="App">
-          <CitySearch updateEvents={this.updateEvents} />
-          {this.state.events && (
-            <NumberOfEvents
-              updateEvents={this.updateEvents}
-              numberOfEvents={this.state.events.length}
-              lat={this.state.lat}
-              lon={this.state.lon}
-            />
-          )}
+      <div style={{ background: '#004643' }}>
+        <Typography variant="h5" align="center" style={{ color: '#fffffe' }}>
+          Welcome to Events By E
+        </Typography>
+        <CitySearch updateEvents={this.updateEvents} />
+        {this.state.events && (
+          <NumberOfEvents
+            updateEvents={this.updateEvents}
+            numberOfEvents={this.state.events.length}
+            lat={this.state.lat}
+            lon={this.state.lon}
+          />
+        )}
 
-          <Grid item className="chart">
-            <ResponsiveContainer height={400}>
-              <BarChart
-                data={this.getData()}
-                fill="#8884d8"
-                margin={{
-                  top: 20,
-                  right: 20,
-                  bottom: 20,
-                  left: 20,
-                }}
-              >
-                <CartesianGrid />
-                <XAxis
-                  type="category"
-                  dataKey="date"
-                  name="date"
-                  label={{ value: 'Date', angle: 0, position: 'insideLeft' }}
-                />
-                <YAxis
-                  label={{
-                    value: 'Events',
-                    angle: -90,
-                    position: 'insideLeft',
-                  }}
-                  type="number"
-                  dataKey="number"
-                  name="number of events"
-                />
-                <Bar
-                  type="number"
-                  fill="#8884d8"
-                  dataKey="number"
-                  name="number of events"
-                />
-                <Legend />
-                {/* <Bar dataKey="date" fill="#8884d8" /> */}
-              </BarChart>
-            </ResponsiveContainer>
-          </Grid>
-          <Grid item className="events">
-            {this.state.events.events && (
-              <EventList events={this.state.events.events} />
-            )}
-          </Grid>
-        </Grid>
-      </Grid>
+        <ResponsiveContainer height={400}>
+          <BarChart
+            data={this.getData()}
+            fill="#001e1d"
+            margin={{
+              top: 20,
+              right: 20,
+              bottom: 20,
+              left: 20,
+            }}
+          >
+            <CartesianGrid />
+            <XAxis
+              stroke="#f5f5f5"
+              type="category"
+              dataKey="date"
+              name="date"
+              label={{ value: 'Date', angle: 0, position: 'insideLeft' }}
+            />
+            <YAxis
+              label={{
+                value: 'Events',
+                angle: -90,
+                position: 'insideLeft',
+              }}
+              stroke="#f5f5f5"
+              type="number"
+              dataKey="number"
+              name="number of events"
+            />
+            <Bar
+              type="number"
+              fill="#8884d8"
+              dataKey="number"
+              name="number of events"
+            />
+            <Legend />
+            {/* <Bar dataKey="date" fill="#8884d8" /> */}
+          </BarChart>
+        </ResponsiveContainer>
+        {this.state.events.events && (
+          <EventList events={this.state.events.events} />
+        )}
+      </div>
     );
   }
 }
