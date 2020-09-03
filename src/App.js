@@ -6,9 +6,7 @@ import NumberOfEvents from './NumberOfEvents';
 import { getEvents } from './api';
 import { Grid, Typography } from '@material-ui/core';
 
-// import { getNewListOfEvents } from './api'
 import moment from 'moment';
-// import  { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
 import {
   BarChart,
@@ -33,8 +31,6 @@ class App extends Component {
 
   componentDidMount() {
     getEvents().then((response) => {
-      // console.log('test');
-      // console.log(response.events);
       this.setState({ events: response });
     });
   }
@@ -69,7 +65,6 @@ class App extends Component {
   };
 
   getData = () => {
-    // console.log(this.state.events, 2)
     const next7Days = []; // Create empty array for the next 7 days
     const currentDate = moment(); // Today
     //loop 7 times for the next 7 days
@@ -142,7 +137,6 @@ class App extends Component {
               name="number of events"
             />
             <Legend />
-            {/* <Bar dataKey="date" fill="#8884d8" /> */}
           </BarChart>
         </ResponsiveContainer>
         {this.state.events.events && (

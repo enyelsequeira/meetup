@@ -26,13 +26,6 @@ const EventList = ({ events }) => {
         </Grid>
       </Grid>
     </div>
-    // <ul className="EventList">
-    //   {events.map((event) => (
-    //     <li className="city" key={event.id}>
-    //       <Event event={event} />
-    //     </li>
-    //   ))}
-    // </ul>
   );
 };
 
