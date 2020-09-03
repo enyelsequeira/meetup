@@ -94,6 +94,7 @@ class Event extends Component {
                   background: '#f9bc60',
                   color: '#001e1d',
                   fontWeight: 'bolder',
+                  marginTop: '10px',
                 }}
                 variant="contained"
                 onClick={this.handleShowDetails}
@@ -104,6 +105,7 @@ class Event extends Component {
             {!showDetails && (
               <Button
                 style={{
+                  marginTop: '10px',
                   background: '#f9bc60',
                   color: '#001e1d0',
                   fontWeight: 'bolder',
@@ -135,6 +137,7 @@ class Event extends Component {
                   textDecoration: 'none',
                   color: '#001e1d',
                   fontWeight: 'bold',
+                  borderRadius: '5px',
                 }}
                 component="button"
                 href={this.props.event.link}

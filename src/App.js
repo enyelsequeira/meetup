@@ -88,7 +88,11 @@ class App extends Component {
   render() {
     return (
       <div style={{ background: '#004643' }}>
-        <Typography variant="h5" align="center" style={{ color: '#fffffe' }}>
+        <Typography
+          variant="h5"
+          align="center"
+          style={{ color: '#fffffe', paddingTop: '20px' }}
+        >
           Welcome to Events By E
         </Typography>
         <CitySearch updateEvents={this.updateEvents} />

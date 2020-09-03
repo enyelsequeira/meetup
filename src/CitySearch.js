@@ -93,10 +93,7 @@ const CitySearch = ({ updateEvents }) => {
                       handleItemClicked(item.name_string, item.lat, item.lon)
                     }
                   >
-                    <Typography
-                      variant="subtitle2"
-                      style={{ color: '#fffffe' }}
-                    >
+                    <Typography variant="subtitle2" className="listItem">
                       {item.name_string}
                     </Typography>
                   </ListItem>

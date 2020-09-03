@@ -16,9 +16,6 @@ const EventList = ({ events }) => {
                   padding: '10px',
                   marginTop: '10px',
                   marginBottom: '20px',
-                  '&:hover': {
-                    cursor: 'pointer',
-                  },
                 }}
                 key={event.id}
               >
