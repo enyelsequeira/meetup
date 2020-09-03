@@ -117,16 +117,34 @@ class Event extends Component {
           </Grid>
           {showDetails && (
             <div>
-              <Typography>Event Information</Typography>
-              <Link
-                style={{ background: '#f9bc60' }}
+              <Typography
+                variant="h5"
+                style={{
+                  color: '#fffffe',
+                  marginBottom: '20px',
+                  marginTop: '30px',
+                }}
+              >
+                Event Information
+              </Typography>
+              <a
+                style={{
+                  background: '#f9bc60',
+                  padding: '10px',
+                  marginTop: '10px',
+                  textDecoration: 'none',
+                  color: '#001e1d',
+                  fontWeight: 'bold',
+                }}
                 component="button"
                 href={this.props.event.link}
-                target="_blank"
+                target="blank"
               >
-                Go to MEET UP
-              </Link>
-              <div
+                Go to Meet Up
+              </a>
+              <Typography
+                style={{ color: '#abd1c6', textAlign: 'left' }}
+                variant="subtitle1"
                 dangerouslySetInnerHTML={{
                   __html: this.props.event.description,
                 }}

@@ -9,7 +9,19 @@ const EventList = ({ events }) => {
         <Grid item xs={12} sm={12} md={12} lg={12}>
           <ul style={{ margin: '0', padding: '0' }}>
             {events.map((event) => (
-              <ListItem style={{ border: '1px solid red' }} key={event.id}>
+              <ListItem
+                style={{
+                  border: '2px solid #001e1d',
+                  borderRadius: '15px',
+                  padding: '10px',
+                  marginTop: '10px',
+                  marginBottom: '20px',
+                  '&:hover': {
+                    cursor: 'pointer',
+                  },
+                }}
+                key={event.id}
+              >
                 <Event event={event} />
               </ListItem>
             ))}
